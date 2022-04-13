@@ -18,7 +18,7 @@ const createUserController = async (req, res) => {
     algorithm: 'HS256',
   });
 
-  return res.status(201).json({ token });
+    return res.status(201).json({ token });
   } catch (error) {
     return res.status(500).json({ message: 'Internal Server Error' });
   }
