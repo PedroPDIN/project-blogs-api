@@ -2,6 +2,7 @@ const { loginController } = require('./login.controller');
 const { 
   createUserController,
   getAllUsersController,
+  getIdUserController,
  } = require('./user.controller');
 
  module.exports = {
@@ -9,5 +10,6 @@ const {
   user: {
     createUserController,
     getAllUsersController,
+    getIdUserController,
   },
  };

@@ -8,6 +8,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/user', auth, user.getAllUsersController);
+app.get('/user/:id', auth, user.getIdUserController);
 
 app.post('/user', validate.isValidUser, user.createUserController);
 app.post('/login', validate.isValidLogin, login.loginController);
