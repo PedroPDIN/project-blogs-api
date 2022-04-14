@@ -10,6 +10,16 @@ const createCategoryController = async (req, res) => {
   }
 };
 
+const getAllCategoryController = async (_req, res) => {
+  try {
+    const categoryAll = await categoryService.getAllCategory();
+    return res.status(200).json(categoryAll);
+  } catch (error) {
+    return res.status(500).json({ message: 'Internal Server Error' });
+  }
+};
+
 module.exports = {
   createCategoryController,
+  getAllCategoryController,
 };

@@ -1,5 +1,8 @@
 const { loginController } = require('./login.controller');
-const { createCategoryController } = require('./category.controller');
+const { 
+  createCategoryController,
+  getAllCategoryController,
+} = require('./category.controller');
 const { 
   createUserController,
   getAllUsersController,
@@ -15,5 +18,6 @@ const {
   },
   category: {
     createCategoryController,
+    getAllCategoryController,
   },
  };

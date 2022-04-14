@@ -8,6 +8,9 @@ const app = express();
 app.use(express.json());
 
 app.get('/user', auth, user.getAllUsersController);
+app.get('/categories',
+auth,
+category.getAllCategoryController);
 app.get('/user/:id', auth, user.getIdUserController);
 
 app.post('/user', validate.isValidUser, user.createUserController);
