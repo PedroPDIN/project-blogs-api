@@ -5,8 +5,8 @@ const { JWT_SECRET } = process.env;
 
 const createUserController = async (req, res) => {
   try {
-  const { displayName, email, password, image } = req.body;
-  const data = await userServices.createUser(displayName, email, password, image);
+    const { displayName, email, password, image } = req.body;
+    const data = await userServices.createUser(displayName, email, password, image);
   if (!data) return res.status(409).json({ message: 'User already registered' });
   
   const payload = {
@@ -24,6 +24,16 @@ const createUserController = async (req, res) => {
   }
 };
 
+const getAllUsersController = async (_req, res) => {
+  try {
+    const usersAll = await userServices.getAllUsers();
+    return res.status(200).json(usersAll);
+  } catch (error) {
+    return res.status(500).json({ message: 'Internal Server Error' });
+  }
+};
+
 module.exports = {
   createUserController,
+  getAllUsersController,
 };

@@ -1,4 +1,4 @@
-const validJoi = require('./validateJoi');
+const validJoi = require('../validationJoi');
 
 const isValidUser = async (req, res, next) => {
   const { error } = validJoi.joiUser.validate(req.body);
