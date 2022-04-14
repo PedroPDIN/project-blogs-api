@@ -1,4 +1,5 @@
 const { User } = require('../models');
+const { generateToken } = require('./generateToken');
 
 const createUser = async (displayName, email, password, image) => {
   const existEmail = await User.findOne({ where: { email } })
@@ -7,8 +8,9 @@ const createUser = async (displayName, email, password, image) => {
   if (existEmail) {
     return null;
   }
+  
   const result = await User.create({ displayName, email, password, image });
-  return result;
+  return generateToken(result);
 };
 
 const getAllUsers = async () => {
