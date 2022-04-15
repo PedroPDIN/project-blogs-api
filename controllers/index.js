@@ -9,6 +9,8 @@ const {
   getIdUserController,
  } = require('./user.controller');
 
+ const { postAllController } = require('./blogPost.controller');
+
  module.exports = {
   login: { loginController },
   user: {
@@ -19,5 +21,8 @@ const {
   category: {
     createCategoryController,
     getAllCategoryController,
+  },
+  post: {
+    postAllController,
   },
  };
