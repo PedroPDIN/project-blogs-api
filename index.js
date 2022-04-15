@@ -13,6 +13,7 @@ auth,
 category.getAllCategoryController);
 app.get('/user/:id', auth, user.getIdUserController);
 app.get('/post', auth, post.postAllController);
+app.get('/post/:id', auth, post.postIdController);
 
 app.post('/user', validate.isValidUser, user.createUserController);
 app.post('/login', validate.isValidLogin, login.loginController);
