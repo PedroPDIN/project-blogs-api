@@ -76,7 +76,7 @@
 8. Busca de um BlogPost(postagem) por base do ID (GET): `/post/:id`
     - IMPORTANTE: A requisição deve ter o token de autenticação nos headers.
 
-## Status do projeto - :construction: Melhorias :construction:
+## Status do projeto - :construction: Incompleto :construction:
  * Endpoint para criar uma postagem
  * Melhora a estrutura do código
 
